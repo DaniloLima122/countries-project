@@ -8,14 +8,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CountryCardComponent } from './components/country-card/country-card.component';
+import { HomeComponent } from './pages/Home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     InputSearchComponent,
-    DropdownComponent
+    DropdownComponent,
+    CountryCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

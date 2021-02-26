@@ -4,7 +4,9 @@
   width: 14rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: .5rem;
+  position: relative;
 
   & span{
     height: 4rem;
@@ -42,6 +44,11 @@
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: 4.5rem;
 
     li{
       line-height: 2rem;
@@ -52,6 +59,6 @@
       }
     }
   }
-
-
 }
+
+

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'dropdown-regions',
@@ -12,28 +12,30 @@ import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
       state('visible', style({
         opacity: 1,
         transform: 'translateY(0)',
-        poitnerEvents: 'All'
+        pointerEvents: 'All'
       })),
       state('hidden', style({
         transform: 'translateY(1rem)',
-        poitnerEvents: 'All'
+        pointerEvents: 'none',
+        opacity: 0
       })),
-      transition('*=>*', animate('1500ms')),
+      transition('*=>*', animate('.5s ease')),
     ]),
   ]
 })
 export class DropdownComponent implements OnInit {
 
   arrownDownIcon = faChevronDown;
+  arrownUpIcon = faChevronUp;
 
-  dropDownState = 'visible';
+  dropDownState = 'hidden';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggle(){
+  toggle() {
     this.dropDownState = this.dropDownState == 'visible' ? 'hidden' : 'visible';
   }
 }

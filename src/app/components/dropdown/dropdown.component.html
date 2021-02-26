@@ -3,7 +3,7 @@
     <label>Filter by Region</label>
     <fa-icon [icon]="arrownDownIcon"></fa-icon>
   </span>
-  <ul @dropDownAnimation ngClass="regions-options">
+  <ul [@dropDownAnimation]="dropDownState" ngClass="regions-options">
     <li>Africa</li>
     <li>América</li>
     <li>Ásia</li>
