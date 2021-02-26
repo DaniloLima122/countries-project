@@ -1,0 +1,13 @@
+<div ngClass="dropdownContainer">
+  <span (click)="toggle()">
+    <label>Filter by Region</label>
+    <fa-icon [icon]="arrownDownIcon"></fa-icon>
+  </span>
+  <ul @dropDownAnimation ngClass="regions-options">
+    <li>Africa</li>
+    <li>América</li>
+    <li>Ásia</li>
+    <li>Europa</li>
+    <li>Oceania</li>
+  </ul>
+</div>

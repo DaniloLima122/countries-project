@@ -1,0 +1,57 @@
+@use '../../utils/variables.scss';
+
+.dropdownContainer{
+  width: 14rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+
+  & span{
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & label{
+      color: variables.$very-dar-blue-lt;
+    }
+
+    fa-icon{
+      font-size: .9rem;
+    }
+  }
+
+  & span,.regions-options {
+
+    box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+    background: variables.$white;
+  }
+
+  & span,.regions-options li{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.09rem;
+    font-weight: 600;
+    padding: 0 1.5rem 0 2rem;
+    cursor: pointer;
+
+    transition: .5s ease;
+  }
+
+  .regions-options{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    li{
+      line-height: 2rem;
+      padding: 0rem 2rem;
+
+      &:hover{
+        opacity: .5;
+      }
+    }
+  }
+
+
+}

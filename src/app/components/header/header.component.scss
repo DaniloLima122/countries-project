@@ -1,0 +1,27 @@
+@use '../../utils/variables.scss';
+
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+  background: variables.$white;
+
+  & > div {
+    width: 90%;
+    margin: auto auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > .themebuttonContainer {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: variables.$very-dar-blue-lt;
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

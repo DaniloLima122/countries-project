@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'app/utils/variables.scss';
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-family: 'Nunito Sans';
+}
+
+html,body{
+  font-size: 88%;
+}
+
+body{
+  background: variables.$very-ligh-gray-l;
+  height: 100vh;
+}
+
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+button{
+  cursor: pointer;
+}
