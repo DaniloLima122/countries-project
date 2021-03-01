@@ -1,16 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Action, ActionReducer, StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
-import { InputSearchComponent } from './components/input-search/input-search.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountryCardComponent } from './components/country-card/country-card.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { HeaderComponent } from './components/header/header.component';
+import { InputSearchComponent } from './components/input-search/input-search.component';
 import { HomeComponent } from './pages/Home/home.component';
+import { CountriesReducer } from './store/reducers/countries.reducer';
+import { CountryItem } from './store/models/country-item.model';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { CountriesEffects } from './store/effects/countries.effect';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,12 @@ import { HomeComponent } from './pages/Home/home.component';
     AppRoutingModule,
     CommonModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot<ActionReducer<CountryItem[], Action>>({
+      countries : CountriesReducer
+    }),
+    EffectsModule.forRoot([CountriesEffects]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

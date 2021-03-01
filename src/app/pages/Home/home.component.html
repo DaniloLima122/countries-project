@@ -6,6 +6,16 @@
     <dropdown-regions></dropdown-regions>
   </header>
   <main>
-    <country-card *ngFor="let i of list"></country-card>
+    <div class="loading" *ngIf="(loading$ | async)">
+      <img src="../../../assets/loading.gif" alt="Loading gif" />
+      <p>Loading countries...</p>
+    </div>
+
+    <div class="cards-container">
+      <country-card
+        *ngFor="let country of countries$ | async"
+        [country]="country"
+      ></country-card>
+    </div>
   </main>
 </section>
