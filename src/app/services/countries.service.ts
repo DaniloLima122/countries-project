@@ -16,4 +16,8 @@ export class CountriesService {
     return this.http.get<CountryItem[]>(this.apiUrl);
   }
 
+  filterByRegion(region : string){
+    return this.http.get<CountryItem[]>(`${this.apiUrl}/region/${region}`);
+  }
+
 }

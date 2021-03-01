@@ -1,21 +1,9 @@
 import { CountryActionsTypes } from '../actions/countries.actions';
-import { CountryItem, ActionsModel  } from '../models/country-item.model';
 import { CountriesState } from '../models/app-state.model';
+import { ActionsModel } from '../models/country-item.model';
+import { UnaryFunction } from 'rxjs';
 
 
-
-// const country: CountryItem = {
-//   flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png',
-//   name: 'Brazil',
-//   population: 206135893,
-//   region: 'Americas',
-//   capital: 'Brasília'
-// }
-
-// const intialState : CountriesState = {
-//   list: [country],
-//   loading: false
-// }
 
 export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
@@ -24,7 +12,7 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
       return { ...state, loading: true }
 
-    case CountryActionsTypes.LIST_COUNTRIES_SUCESS:
+    case CountryActionsTypes.LIST_COUNTRIES_SUCCESS:
 
       return { ...state, list: action.payload, loading: false }
 
@@ -34,7 +22,11 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.FILTER_COUNTRIES:
 
-      return { ...state, 'payload': action.payload }
+      return { ...state, payload: action.payload, loading: true }
+
+    case CountryActionsTypes.FILTER_COUNTRIES_SUCCESS:
+
+      return { ...state, list: action.payload, loading: false }
 
     default:
 

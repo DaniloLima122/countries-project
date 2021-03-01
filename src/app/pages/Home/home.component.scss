@@ -16,7 +16,7 @@ section{
 
   .loading {
 
-    margin: 5rem;
+    margin: 5rem auto;
 
     img{
       filter: brightness(0.98) grayscale(1) opacity(.3);
@@ -42,6 +42,5 @@ section{
     width: 90%;
     padding: 5rem 0;
     display: grid;
-    place-content: center;
   }
 }

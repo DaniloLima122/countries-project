@@ -11,7 +11,7 @@
       <p>Loading countries...</p>
     </div>
 
-    <div class="cards-container">
+    <div class="cards-container" *ngIf="!(loading$ | async)">
       <country-card
         *ngFor="let country of countries$ | async"
         [country]="country"
