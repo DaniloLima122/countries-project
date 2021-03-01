@@ -3,11 +3,12 @@ import { CountryItem } from '../models/country-item.model';
 import { Action } from '@ngrx/store';
 
 export enum CountryActionsTypes {
-  SEARCH_COUNTRIES = '[COUNTRIES] SEARCH',
   LIST_COUNTRIES = '[COUNTRIES] LIST',
   LIST_COUNTRIES_SUCCESS = '[COUNTRIES] LIST_SUCCESS',
   FILTER_COUNTRIES = '[COUNTRIES] FILTER',
-  FILTER_COUNTRIES_SUCCESS = '[COUNTRIES] FILTER_SUCESS'
+  FILTER_COUNTRIES_SUCCESS = '[COUNTRIES] FILTER_SUCCESS',
+  SEARCH_COUNTRIES = '[COUNTRIES] SEARCH',
+  SEARCH_COUNTRIES_SUCCESS = '[COUNTRIES] SEARCH_SUCCESS'
 }
 
 export class LoadCountries implements Action {
@@ -36,8 +37,14 @@ export class FilterCountriesSuccess implements Action {
   constructor(public payload: CountryItem[]) { }
 }
 
-// export const filterCountries = (continent : string) : Action  => {
 
-//   return <Action>{type: CountryActionsTypes.LIST_COUNTRIES, payload : continent};
-// }
+export class SearchCountries implements Action {
+  readonly type = CountryActionsTypes.SEARCH_COUNTRIES;
+  constructor(public payload: string) { }
+}
+
+export class SearchCountriesSuccess implements Action {
+  readonly type = CountryActionsTypes.SEARCH_COUNTRIES_SUCCESS;
+  constructor(public payload: CountryItem[]) { }
+}
 

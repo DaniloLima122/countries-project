@@ -16,6 +16,7 @@ import { CountryItem } from './store/models/country-item.model';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { CountriesEffects } from './store/effects/countries.effect';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CountriesEffects } from './store/effects/countries.effect';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     StoreModule.forRoot<ActionReducer<CountryItem[], Action>>({

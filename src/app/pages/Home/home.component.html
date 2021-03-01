@@ -7,7 +7,9 @@
   </header>
   <main>
     <div class="loading" *ngIf="(loading$ | async)">
-      <img src="../../../assets/loading.gif" alt="Loading gif" />
+      <div>
+        <img src="../../../assets/loading.gif" alt="Loading gif" />
+      </div>
       <p>Loading countries...</p>
     </div>
 

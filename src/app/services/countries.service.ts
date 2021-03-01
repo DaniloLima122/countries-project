@@ -8,16 +8,21 @@ import { CountryItem } from '../store/models/country-item.model';
 })
 export class CountriesService {
 
-  apiUrl =  environment.apiUrl;
+  apiUrl = environment.apiUrl;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  listCountries(){
+  listCountries() {
     return this.http.get<CountryItem[]>(this.apiUrl);
   }
 
-  filterByRegion(region : string){
+  filterByRegion(region: string) {
     return this.http.get<CountryItem[]>(`${this.apiUrl}/region/${region}`);
+  }
+
+  searchCountry(countrieName: string) {
+    console.log("CHamou")
+    return this.http.get<CountryItem[]>(`${this.apiUrl}/name/${countrieName}`);
   }
 
 }

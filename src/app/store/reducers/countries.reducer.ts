@@ -18,7 +18,11 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.SEARCH_COUNTRIES:
 
-      return { ...state, 'payload': action.payload }
+      return { ...state, payload: action.payload }
+
+    case CountryActionsTypes.SEARCH_COUNTRIES_SUCCESS:
+
+      return { ...state, list : action.payload , loading : false}
 
     case CountryActionsTypes.FILTER_COUNTRIES:
 

@@ -17,9 +17,16 @@ section{
   .loading {
 
     margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
 
-    img{
-      filter: brightness(0.98) grayscale(1) opacity(.3);
+    div{
+
+      flex: 1;
+
+      img{
+        filter: brightness(0.98) grayscale(1) opacity(.3);
+      }
     }
 
     p {
