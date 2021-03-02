@@ -1,8 +1,6 @@
 import { CountryActionsTypes } from '../actions/countries.actions';
 import { CountriesState } from '../models/app-state.model';
 import { ActionsModel } from '../models/country-item.model';
-import { UnaryFunction } from 'rxjs';
-
 
 
 export function CountriesReducer(state: CountriesState, action: ActionsModel) {
@@ -31,6 +29,10 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
     case CountryActionsTypes.FILTER_COUNTRIES_SUCCESS:
 
       return { ...state, list: action.payload, loading: false }
+
+    case CountryActionsTypes.HANDLE_ERROR:
+
+      return { ...state, error: action.payload, loading: false }
 
     default:
 

@@ -14,6 +14,35 @@ section{
     flex: 1;
   }
 
+  img{
+    filter: brightness(0.98) grayscale(1) opacity(.3);
+  }
+
+  p {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-2rem);
+    font-weight: 600;
+    color: #aaa;
+  }
+
+  .error{
+    margin: 5rem auto;
+
+    div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+    img{
+      max-width: 60%;
+      transform: translateX(-3rem);
+    }
+  }
+
   .loading {
 
     margin: 5rem auto;
@@ -24,19 +53,12 @@ section{
 
       flex: 1;
 
-      img{
-        filter: brightness(0.98) grayscale(1) opacity(.3);
-      }
+      // img{
+      //   filter: brightness(0.98) grayscale(1) opacity(.3);
+      // }
     }
 
-    p {
-      font-size: 2rem;
-      width: 100%;
-      text-align: center;
-      transform: translateX(-2rem);
-      font-weight: 600;
-      color: #aaa;
-    }
+
   }
 
   header {
@@ -49,5 +71,6 @@ section{
     width: 90%;
     padding: 5rem 0;
     display: grid;
+    min-height: 70vh;
   }
 }

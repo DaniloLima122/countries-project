@@ -1,9 +1,11 @@
 import { CountryItem } from './country-item.model';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 export interface CountriesState{
   list: CountryItem[],
-  loading: boolean
+  loading: boolean,
+  error?: HttpErrorResponse
 }
 
 export interface AppState{

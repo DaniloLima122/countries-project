@@ -1,6 +1,7 @@
 // import { Action } from '@ngrx/store';
 import { CountryItem } from '../models/country-item.model';
 import { Action } from '@ngrx/store';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export enum CountryActionsTypes {
   LIST_COUNTRIES = '[COUNTRIES] LIST',
@@ -8,7 +9,8 @@ export enum CountryActionsTypes {
   FILTER_COUNTRIES = '[COUNTRIES] FILTER',
   FILTER_COUNTRIES_SUCCESS = '[COUNTRIES] FILTER_SUCCESS',
   SEARCH_COUNTRIES = '[COUNTRIES] SEARCH',
-  SEARCH_COUNTRIES_SUCCESS = '[COUNTRIES] SEARCH_SUCCESS'
+  SEARCH_COUNTRIES_SUCCESS = '[COUNTRIES] SEARCH_SUCCESS',
+  HANDLE_ERROR = '[ERROR] HANDLE_ERROR'
 }
 
 export class LoadCountries implements Action {
@@ -20,11 +22,6 @@ export class LoadCountriesSuccess implements Action {
   readonly type = CountryActionsTypes.LIST_COUNTRIES_SUCCESS;
 
   constructor(public payload: CountryItem[]) { }
-}
-
-export const search = (country: string): Action => {
-
-  return <Action>{ type: CountryActionsTypes.SEARCH_COUNTRIES, payload: country };
 }
 
 export class FilterCountries implements Action {
@@ -48,3 +45,11 @@ export class SearchCountriesSuccess implements Action {
   constructor(public payload: CountryItem[]) { }
 }
 
+
+export class HandleError implements Action{
+
+  readonly type = CountryActionsTypes.HANDLE_ERROR;
+
+  constructor(public payload: HttpErrorResponse) { }
+
+}

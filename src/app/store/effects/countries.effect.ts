@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { CountriesService } from 'src/app/services/countries.service';
-import { CountryActionsTypes, LoadCountries, LoadCountriesSuccess, FilterCountries, FilterCountriesSuccess, SearchCountries, SearchCountriesSuccess } from '../actions/countries.actions';
+import { CountryActionsTypes, LoadCountries, LoadCountriesSuccess, FilterCountries, FilterCountriesSuccess, SearchCountries, SearchCountriesSuccess, HandleError } from '../actions/countries.actions';
+import { of } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Injectable()
 export class CountriesEffects {
@@ -16,7 +19,7 @@ export class CountriesEffects {
           .pipe(
             map(countries_list => new LoadCountriesSuccess(countries_list)))
       ),
-      catchError(error => { throw new Error(error) })
+      catchError((error: HttpErrorResponse) => of(new HandleError(error)))
     )
 
     @Effect() filterCountriesByRegion = this.actions$
@@ -27,7 +30,7 @@ export class CountriesEffects {
           .pipe(
             map(filtered_list => new FilterCountriesSuccess(filtered_list)))
       ),
-      catchError(error => { throw new Error(error) })
+      catchError((error: HttpErrorResponse) =>  of(new HandleError(error)))
     )
 
     @Effect() searchCountries = this.actions$
@@ -38,7 +41,7 @@ export class CountriesEffects {
           .pipe(
             map(country => new SearchCountriesSuccess(country)))
       ),
-      catchError(error => { throw new Error(error) })
+      catchError((error: HttpErrorResponse) => of(new HandleError(error)))
     )
 
 

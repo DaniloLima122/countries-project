@@ -6,14 +6,29 @@
     <dropdown-regions></dropdown-regions>
   </header>
   <main>
-    <div class="loading" *ngIf="(loading$ | async)">
+    <div
+      class="error"
+      *ngIf="error$ | async"
+      [ngSwitch]="(error$ | async)?.status"
+    >
+      <div class="not-found" *ngSwitchCase="404">
+        <img src="../../../assets/404.gif" alt="Not found gif" />
+        <p>Country not found</p>
+      </div>
+      <p *ngSwitchCase="500">Sorry, our bad! Try again later</p>
+    </div>
+
+    <div class="loading" *ngIf="loading$ | async">
       <div>
         <img src="../../../assets/loading.gif" alt="Loading gif" />
       </div>
       <p>Loading countries...</p>
     </div>
 
-    <div class="cards-container" *ngIf="!(loading$ | async)">
+    <div
+      class="cards-container"
+      *ngIf="!(loading$ | async) && !(error$ | async)"
+    >
       <country-card
         *ngFor="let country of countries$ | async"
         [country]="country"
