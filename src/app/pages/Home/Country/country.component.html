@@ -1,26 +1,29 @@
 <div class="country-container">
   <button (click)="returnHome()">Back</button>
 
-  <section>
+  <section class="country-wrapper">
     <img [src]="countryData.flag" [alt]="countryData.name" />
     <div class="country-data">
       <h2>{{ countryData.name }}</h2>
-
       <div>
         <span><label>Native name:</label>{{ countryData.nativeName }}</span>
-        <span><label>Population:</label>{{ countryData.population }}</span>
         <span><label>Region:</label>{{ countryData.region }}</span>
-        <span><label>Sub region:</label>{{ countryData.subRegion }}</span>
-        <span><label>Capital:</label>{{ countryData.capital }}</span>
+        <span><label>Population:</label>{{ countryData.population }}</span>
+        <span><label>Sub region:</label>{{ countryData.subregion }}</span>
+        <span><label>Languages:</label> <label *ngFor="let language of countryData.languages">{{language.name}}</label> </span>
+        <span><label>Currencies:</label> <label *ngFor="let currencie of countryData.currencies">{{currencie.name}}</label> </span>
         <span
-          ><label>Top Level Domain:</label
+        ><label>Top Level Domain:</label
           >{{ countryData.topLevelDomain }}</span
-        >
+          >
+          <span><label>Capital:</label>{{ countryData.capital }}</span>
       </div>
       <footer>
-        <span *ngFor="let countryBorder of countryData.borders">{{
-          countryBorder
-        }}</span>
+        <label>Border Countries:</label>
+
+        <section>
+          <span *ngFor="let countryBorder of countryData.borders"><label>{{countryBorder}}</label></span>
+        </section>
       </footer>
     </div>
   </section>

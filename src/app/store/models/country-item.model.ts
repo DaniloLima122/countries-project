@@ -20,7 +20,7 @@ export interface CompleteCountryData {
   region: string;
   capital: string;
   nativeName : string,
-  subRegion : string,
+  subregion : string,
   currencies: [{
     name: string
   }],

@@ -17,6 +17,8 @@ export class CountryComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.data.pipe(map(({ country }) => this.countryData = country), take(1)).subscribe();
+
+    console.log(this.countryData)
   }
 
   returnHome() {
