@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { CountryCardData, CompleteCountryData } from '../store/models/country-item.model';
+import { CompleteCountryData } from '../store/models/country-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +13,14 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   listCountries() {
-    return this.http.get<CountryCardData[]>(this.apiUrl);
+    return this.http.get<CompleteCountryData[]>(`${this.apiUrl}/all`);
   }
 
   filterByRegion(region: string) {
-    return this.http.get<CountryCardData[]>(`${this.apiUrl}/region/${region}`);
+    return this.http.get<CompleteCountryData[]>(`${this.apiUrl}/region/${region}`);
   }
 
   searchCountry(countrieName: string) {
-    return this.http.get<CountryCardData[]>(`${this.apiUrl}/name/${countrieName}`);
-  }
-
-  getCountryByName(countrieName: string) {
-
     return this.http.get<CompleteCountryData[]>(`${this.apiUrl}/name/${countrieName}`);
   }
-
 }

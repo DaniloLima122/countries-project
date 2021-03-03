@@ -1,9 +1,9 @@
-import { CountryCardData } from './country-item.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CompleteCountryData } from './country-item.model';
 
 
 export interface CountriesState{
-  list: CountryCardData[],
+  list: CompleteCountryData[],
   loading: boolean,
   error: HttpErrorResponse | undefined
 }

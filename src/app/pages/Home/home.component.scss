@@ -6,6 +6,10 @@ section {
   flex-direction: column;
   align-items: center;
 
+  dropdown-regions{
+    z-index: 1;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
@@ -24,13 +28,13 @@ section {
 
   img {
     filter: brightness(0.98) grayscale(1) opacity(0.3);
+    transform: translateX(1rem);
   }
 
   p {
     font-size: 2rem;
     width: 100%;
     text-align: center;
-    transform: translateX(-2rem);
     font-weight: 600;
     color: #aaa;
   }
@@ -45,8 +49,9 @@ section {
       align-items: center;
     }
     img {
-      max-width: 60%;
-      transform: translateX(-3rem);
+      width: 100%;
+      max-width: 500px;
+      transform: translateX(-1rem);
     }
   }
 
@@ -54,13 +59,14 @@ section {
     margin: 5rem auto;
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
     div {
-      flex: 1;
+      // flex: 1;
 
-      // img{
-      //   filter: brightness(0.98) grayscale(1) opacity(.3);
-      // }
+      img{
+        width: 100%;
+      }
+
     }
   }
 
@@ -68,6 +74,12 @@ section {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    input-search{
+      width: 500px;
+    }
   }
 
   main {

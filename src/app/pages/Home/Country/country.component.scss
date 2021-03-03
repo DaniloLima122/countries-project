@@ -1,80 +1,89 @@
 @use '../../../utils/variables.scss';
 
-.country-container{
+.country-container {
   max-width: 90%;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 6rem 1rem;
 
-  button{
+  button {
     background: variables.$white;
     height: 3rem;
     width: 8rem;
     box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
   }
 
-  & section.country-wrapper{
+  & section.country-wrapper {
     display: flex;
     column-gap: 10rem;
     flex-wrap: wrap;
     margin: 5rem 0;
     row-gap: 5rem;
 
-    img{
-      max-width: 50rem;
+    img {
+      max-width: 40rem;
       width: 100%;
-      height: 33rem;
+      height: 28rem;
+
+      @media (max-width: 526px) {
+        height: 18rem;
+      }
     }
 
-    .country-data{
+    .country-data {
       display: flex;
       flex-direction: column;
       justify-content: center;
       font-size: 1.2rem;
 
-      h2{
+      h2 {
         font-size: 2rem;
       }
 
-      div{
-
+      div {
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
         justify-content: space-evenly;
         column-gap: 8rem;
         margin: 2rem 0 4rem 0;
 
-        span{
-          margin: .5rem 0;
+        @media (max-width: 526px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
 
-          label:first-child{
+        span {
+          margin: 0.5rem 0;
+
+          label:first-child {
             font-weight: 600;
-            margin-right: .5rem ;
+            margin-right: 0.5rem;
           }
         }
       }
-      max-width: 50%;
+      // max-width: 50%;
 
-      footer{
+      footer {
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        max-width: 650px;
 
-        label{
+        label {
           font-weight: 600;
         }
 
-        section{
+        section {
           display: flex;
           flex-wrap: wrap;
+          gap: 1rem;
         }
 
-        span{
+        span {
           background: transparent;
-          padding: .5rem 2rem;
-          margin: 1rem;
+          padding: 0.5rem 2rem;
           font-size: 1rem;
           box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
         }

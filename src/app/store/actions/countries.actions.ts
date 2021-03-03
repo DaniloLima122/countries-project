@@ -1,5 +1,5 @@
 // import { Action } from '@ngrx/store';
-import { CountryCardData } from '../models/country-item.model';
+import { CompleteCountryData } from '../models/country-item.model';
 import { Action } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -21,7 +21,7 @@ export class LoadCountriesSuccess implements Action {
 
   readonly type = CountryActionsTypes.LIST_COUNTRIES_SUCCESS;
 
-  constructor(public payload: CountryCardData[]) { }
+  constructor(public payload: CompleteCountryData[]) { }
 }
 
 export class FilterCountries implements Action {
@@ -31,7 +31,7 @@ export class FilterCountries implements Action {
 
 export class FilterCountriesSuccess implements Action {
   readonly type = CountryActionsTypes.FILTER_COUNTRIES_SUCCESS;
-  constructor(public payload: CountryCardData[]) { }
+  constructor(public payload: CompleteCountryData[]) { }
 }
 
 
@@ -42,7 +42,7 @@ export class SearchCountries implements Action {
 
 export class SearchCountriesSuccess implements Action {
   readonly type = CountryActionsTypes.SEARCH_COUNTRIES_SUCCESS;
-  constructor(public payload: CountryCardData[]) { }
+  constructor(public payload: CompleteCountryData[]) { }
 }
 
 export class HandleError implements Action{

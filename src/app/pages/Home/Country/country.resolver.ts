@@ -17,6 +17,6 @@ export class CountryResolver implements Resolve<CompleteCountryData>{
 
     let countryName = route.params.country;
 
-    return this.countryService.getCountryByName(countryName).pipe(switchMap(data => data));
+    return this.countryService.searchCountry(countryName).pipe(switchMap(data => data));
   }
 }

@@ -1,10 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/store/models/app-state.model';
-import { CountryCardData } from 'src/app/store/models/country-item.model';
-import { LoadCountries } from '../../store/actions/countries.actions'
-import { HttpErrorResponse } from '@angular/common/http';
+import { CompleteCountryData } from 'src/app/store/models/country-item.model';
+import { LoadCountries } from '../../store/actions/countries.actions';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  countries$ !: Observable<CountryCardData[]>;
+  countries$ !: Observable<CompleteCountryData[]>;
   loading$ !: Observable<Boolean>;
   error$ !: Observable<HttpErrorResponse | undefined>;
 
