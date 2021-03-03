@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CountryItem } from 'src/app/store/models/country-item.model';
+import { CountryCardData } from 'src/app/store/models/country-item.model';
 
 @Component({
   selector: 'country-card',
@@ -8,7 +8,7 @@ import { CountryItem } from 'src/app/store/models/country-item.model';
 })
 export class CountryCardComponent implements OnInit {
 
-  @Input() country !: CountryItem;
+  @Input() country !: CountryCardData;
 
   constructor() { }
 

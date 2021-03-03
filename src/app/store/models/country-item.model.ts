@@ -5,10 +5,28 @@ export class ActionsModel implements Action{
   payload?: string = "";
 }
 
-export interface CountryItem{
+export interface CountryCardData{
   flag: string;
   name: string;
   population: number;
   region: string;
   capital: string;
+}
+
+export interface CompleteCountryData {
+  flag: string;
+  name: string;
+  population: number;
+  region: string;
+  capital: string;
+  nativeName : string,
+  subRegion : string,
+  currencies: [{
+    name: string
+  }],
+  languages : [{
+    name : string
+  }],
+  topLevelDomain: Array<string>,
+  borders: Array<string>
 }

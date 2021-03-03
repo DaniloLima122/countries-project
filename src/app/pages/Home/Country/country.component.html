@@ -1,0 +1,27 @@
+<div class="country-container">
+  <button (click)="returnHome()">Back</button>
+
+  <section>
+    <img [src]="countryData.flag" [alt]="countryData.name" />
+    <div class="country-data">
+      <h2>{{ countryData.name }}</h2>
+
+      <div>
+        <span><label>Native name:</label>{{ countryData.nativeName }}</span>
+        <span><label>Population:</label>{{ countryData.population }}</span>
+        <span><label>Region:</label>{{ countryData.region }}</span>
+        <span><label>Sub region:</label>{{ countryData.subRegion }}</span>
+        <span><label>Capital:</label>{{ countryData.capital }}</span>
+        <span
+          ><label>Top Level Domain:</label
+          >{{ countryData.topLevelDomain }}</span
+        >
+      </div>
+      <footer>
+        <span *ngFor="let countryBorder of countryData.borders">{{
+          countryBorder
+        }}</span>
+      </footer>
+    </div>
+  </section>
+</div>

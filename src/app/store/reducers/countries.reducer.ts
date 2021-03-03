@@ -12,15 +12,15 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.LIST_COUNTRIES_SUCCESS:
 
-      return { ...state, list: action.payload, loading: false }
+      return { ...state, list: action.payload, loading: false, error: undefined }
 
     case CountryActionsTypes.SEARCH_COUNTRIES:
 
-      return { ...state, payload: action.payload }
+      return { ...state, payload: action.payload , loading: true }
 
     case CountryActionsTypes.SEARCH_COUNTRIES_SUCCESS:
 
-      return { ...state, list : action.payload , loading : false}
+      return { ...state, list: action.payload, loading: false, error: undefined }
 
     case CountryActionsTypes.FILTER_COUNTRIES:
 
@@ -28,11 +28,11 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.FILTER_COUNTRIES_SUCCESS:
 
-      return { ...state, list: action.payload, loading: false }
+      return { ...state, list: action.payload, loading: false, error: undefined }
 
     case CountryActionsTypes.HANDLE_ERROR:
 
-      return { ...state, error: action.payload, loading: false }
+      return { ...state, list: [], loading: false, error: action.payload, }
 
     default:
 

@@ -27,7 +27,7 @@ export class InputSearchComponent implements OnInit, OnDestroy {
     this.eventSubscription = this.formControl.valueChanges
         .pipe(
           map((value : string) => value),
-          debounceTime(1000))
+          debounceTime(500))
           .subscribe(value =>{
             value.length > 0  ?  this.searchCountries(value) : this.listAllCountries()
         }, (error) => console.log(error))

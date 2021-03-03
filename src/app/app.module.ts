@@ -1,45 +1,35 @@
-import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EffectsModule } from '@ngrx/effects';
 import { Action, ActionReducer, StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CountryCardComponent } from './components/country-card/country-card.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { HeaderComponent } from './components/header/header.component';
-import { InputSearchComponent } from './components/input-search/input-search.component';
-import { HomeComponent } from './pages/Home/home.component';
-import { CountriesReducer } from './store/reducers/countries.reducer';
-import { CountryItem } from './store/models/country-item.model';
-import { HttpClientModule } from '@angular/common/http';
-import { EffectsModule } from '@ngrx/effects';
+import { HomeModule } from './pages/Home/home.module';
 import { CountriesEffects } from './store/effects/countries.effect';
-import {ReactiveFormsModule} from '@angular/forms';
+import { CountryCardData } from './store/models/country-item.model';
+import { CountriesReducer } from './store/reducers/countries.reducer';
+import { HeaderComponent } from './components/header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    InputSearchComponent,
-    DropdownComponent,
-    CountryCardComponent,
-    HomeComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot<ActionReducer<CountryItem[], Action>>({
+    StoreModule.forRoot<ActionReducer<CountryCardData[], Action>>({
       countries : CountriesReducer
     }),
     EffectsModule.forRoot([CountriesEffects]),
-    HttpClientModule
+    HttpClientModule,
+    HomeModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

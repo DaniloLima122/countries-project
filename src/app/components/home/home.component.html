@@ -1,3 +1,4 @@
+<app-header></app-header>
 
 <section>
   <header>
@@ -29,7 +30,7 @@
       *ngIf="!(loading$ | async) && !(error$ | async)"
     >
       <country-card
-        [routerLink]="['/country', country.name]"
+        routerLink="country"
         *ngFor="let country of countries$ | async"
         [country]="country"
       ></country-card>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { CountryComponent } from './pages/Home/Country/country.component';
 import { HomeComponent } from './pages/Home/home.component';
+import { CountryResolver } from './pages/Home/Country/country.resolver';
 
 const routes: Routes = [
   {
@@ -11,11 +13,19 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'country/:country',
+    component: CountryComponent,
+    resolve: {
+      country : CountryResolver
+    }
   }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

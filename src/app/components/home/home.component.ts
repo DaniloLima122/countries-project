@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/store/models/app-state.model';
-import { CountryCardData } from 'src/app/store/models/country-item.model';
+import { CountryItem } from 'src/app/store/models/country-item.model';
 import { LoadCountries } from '../../store/actions/countries.actions'
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  countries$ !: Observable<CountryCardData[]>;
+  countries$ !: Observable<CountryItem[]>;
   loading$ !: Observable<Boolean>;
   error$ !: Observable<HttpErrorResponse | undefined>;
 
@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
     this.countries$ = this.store.select(store => store.countries.list);
     this.loading$ = this.store.select(store => store.countries.loading);
     this.error$ = this.store.select(store => store.countries?.error);
+
+    this.error$.subscribe(error => console.log(error))
 
     this.store.dispatch(new LoadCountries())
   }
