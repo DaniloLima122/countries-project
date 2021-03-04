@@ -20,6 +20,10 @@ const routes: Routes = [
     resolve: {
       country : CountryResolver
     }
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 
 ];
