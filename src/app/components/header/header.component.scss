@@ -8,7 +8,7 @@
   box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
   background: var(--card_bg_header_bgColor);
 
-  h1{
+  h1 {
     @media (max-width: 526px) {
       font-size: 1.5em;
     }
@@ -26,9 +26,9 @@
       font-size: 1.3rem;
       font-weight: 600;
       color: var(--text-color);
-      *{
-      cursor: pointer
-    }
+      * {
+        cursor: pointer;
+      }
       span {
         margin-left: 1rem;
         @media (max-width: 526px) {

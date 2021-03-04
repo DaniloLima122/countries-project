@@ -24,5 +24,9 @@ button{
 
 ::-webkit-scrollbar{
   width: 5px;
+  background: rgb(216, 216, 216);
+}
 
+::-webkit-scrollbar-thumb{
+  background: rgb(155, 155, 155);
 }

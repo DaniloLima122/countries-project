@@ -1,8 +1,8 @@
-<figure class="card">
+<figure class="card" [title]="country.name">
   <img src="{{ country.flag }}" alt="" loading="lazy"/>
 
   <figcaption>
-    <h2 [title]="country.name" >{{country.name}}</h2>
+    <h2>{{country.name}}</h2>
     <span><label>Population:</label>{{country.population}}</span>
     <span><label>Region:</label>{{country.region}}</span>
     <span><label>Capital:</label>{{country.capital}}</span>
