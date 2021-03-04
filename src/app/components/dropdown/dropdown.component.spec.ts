@@ -7,12 +7,11 @@ describe('DropdownComponent', () => {
   let component: DropdownComponent;
   let fixture: ComponentFixture<DropdownComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [ DropdownComponent ],
       schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
   });
 
   beforeEach(() => {

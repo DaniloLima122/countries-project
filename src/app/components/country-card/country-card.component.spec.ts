@@ -7,14 +7,12 @@ describe('CountryCardComponent', () => {
   let component: CountryCardComponent;
   let fixture: ComponentFixture<CountryCardComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ CountryCardComponent ],
       schemas: [NO_ERRORS_SCHEMA]
-    })
-  });
+    }).compileComponents()
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(CountryCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

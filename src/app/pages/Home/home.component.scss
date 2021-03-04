@@ -15,6 +15,7 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 7rem;
     flex: 1;
+    justify-content:center;
 
     country-card{
       transition: opacity .5s ease;;
@@ -61,7 +62,6 @@ section {
     flex-direction: column;
     overflow: hidden;
     div {
-      // flex: 1;
 
       img{
         width: 100%;

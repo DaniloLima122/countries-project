@@ -2,24 +2,61 @@ import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
 
 import { CountriesService } from './countries.service';
-import { CountryCardData } from '../store/models/country-item.model';
+import { CountryCardData, CompleteCountryData } from '../store/models/country-item.model';
 
-const countriesList: CountryCardData[] = [{
-  flag: 'flag',
-  name: 'Brazil',
-  population: 20000,
+const countriesList: CompleteCountryData[] = [{
+
+  flag: "flag",
+  name: "Brazil",
+  population: 200000,
   region: 'Americas',
-  capital: 'Brasília'
+  capital: 'Brasília',
+  nativeName: 'Brazil',
+  subregion: 'string',
+  currencies: [{
+    name: 'string'
+  }],
+  languages: [{
+    name: 'string'
+  }],
+  topLevelDomain: ['.br'],
+  borders: ['AC']
 },
 {
-
-  flag: 'flag',
-  name: 'France',
-  population: 150000,
+  flag: "flag",
+  name: "France",
+  population: 200000,
   region: 'Europe',
-  capital: 'Paris'
+  capital: 'Paris',
+  nativeName: 'France',
+  subregion: 'string',
+  currencies: [{
+    name: 'string'
+  }],
+  languages: [{
+    name: 'string'
+  }],
+  topLevelDomain: ['.br'],
+  borders: ['AC']
 },
 ]
+
+// const countriesList: CountryCardData[] = [{
+//   flag: 'flag',
+//   name: 'Brazil',
+//   population: 20000,
+//   region: 'Americas',
+//   capital: 'Brasília'
+// },
+// {
+
+//   flag: 'flag',
+//   name: 'France',
+//   population: 150000,
+//   region: 'Europe',
+//   capital: 'Paris'
+// },
+// ]
 
 describe('CountriesService', () => {
   let service: CountriesService;
@@ -48,7 +85,7 @@ describe('CountriesService', () => {
       expect(list).toEqual(countriesList);
     })
 
-    const req = httpMock.expectOne(`${service.apiUrl}/All`)
+    const req = httpMock.expectOne(`${service.apiUrl}/all`)
 
     expect(req.request.method).toBe('GET');
     expect(spylistCountries).toHaveBeenCalledTimes(1)
@@ -68,7 +105,7 @@ describe('CountriesService', () => {
     const spyfilterByRegion = jest.spyOn(service, 'filterByRegion');
 
     const subscription = service.filterByRegion('Europe').subscribe(list => {
-      expect(list).toEqual(countriesList[1]);
+      expect(list[1]).toBe(countriesList[1]);
     })
 
     const req = httpMock.expectOne(`${service.apiUrl}/region/Europe`);
@@ -88,10 +125,10 @@ describe('CountriesService', () => {
 
   test('should return searched country', fakeAsync(() => {
 
-    const spyfilterByRegion = jest.spyOn(service, 'filterByRegion');
+    const spyfilterByRegion = jest.spyOn(service, 'searchCountry');
 
     const subscription = service.searchCountry('Brazil').subscribe(list => {
-      expect(list).toEqual(countriesList[0]);
+      expect(list[0]).toEqual(countriesList[0]);
     })
 
     const req = httpMock.expectOne(`${service.apiUrl}/name/Brazil`)

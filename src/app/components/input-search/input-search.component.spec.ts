@@ -4,13 +4,9 @@ import { InputSearchComponent } from './input-search.component';
 import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/models/app-state.model';
-import { MockStore } from '@ngrx/store/testing';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-class StoreMock  {
-  // How we did it before
-  select = jasmine.createSpy().and.returnValue(of());
-  dispatch = jasmine.createSpy();
-}
 
 describe('InputSearchComponent', () => {
   let component: InputSearchComponent;
@@ -20,26 +16,57 @@ describe('InputSearchComponent', () => {
   beforeEach( () => {
     TestBed.configureTestingModule({
       declarations: [InputSearchComponent],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
-        {
-          provide: Store,
-          useClass: StoreMock
-        }
+        provideMockStore()
       ]
-    });
+    }).compileComponents();
 
     store = TestBed.inject(MockStore);
 
   });
 
   beforeEach(() => {
-    store = TestBed.get(Store);
+
     fixture = TestBed.createComponent(InputSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    expect(store).toBeDefined();
     expect(component).toBeTruthy();
   });
+
+  test('should list all countries when input value size is 0' ,() => {
+
+    const spyGetAllCountries = jest.spyOn(component, 'listAllCountries');
+
+    component.listAllCountries();
+
+    component.formControl.setValue("");
+
+    const searchText = component.formControl.value;
+
+    expect(spyGetAllCountries).toBeCalledTimes(1)
+    expect(searchText).toHaveLength(0)
+
+  })
+
+  test('should search countrie when input value size is greater than 0' ,() => {
+
+    const spySearchCountries = jest.spyOn(component, 'searchCountries');
+
+    component.formControl.setValue("Brazil");
+
+    const searchText = component.formControl.value;
+
+    component.searchCountries(searchText);
+
+    expect(spySearchCountries).toBeCalledTimes(1)
+    expect(searchText.length).toBeGreaterThan(0)
+
+  })
+
+
 });

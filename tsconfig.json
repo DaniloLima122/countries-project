@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -20,7 +21,7 @@
       "es2018",
       "dom"
     ],
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
