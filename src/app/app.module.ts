@@ -12,6 +12,7 @@ import { CountryCardData } from './store/models/country-item.model';
 import { CountriesReducer } from './store/reducers/countries.reducer';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ThemeService } from './services/theme/theme.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

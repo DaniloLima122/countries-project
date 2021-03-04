@@ -4,30 +4,31 @@
   width: 85%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 6rem 0rem;
+  padding-top: 13rem;
 
   button {
-    background: variables.$white;
+    background: var(--card_bg_header_bgColor);
     height: 3rem;
     width: 8rem;
     box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+    color: var(--color-text);
 
-    fa-icon{
-      margin-right: .6rem;
+    fa-icon {
+      margin-right: 0.6rem;
     }
   }
 
   & section.country-wrapper {
     display: flex;
-    column-gap: 10rem;
+    column-gap: 6rem;
     flex-wrap: wrap;
     margin: 5rem 0;
     row-gap: 5rem;
 
     img {
-      max-width: 40rem;
+      max-width: 34rem;
       width: 100%;
-      height: 28rem;
+      height: 25rem;
 
       @media (max-width: 526px) {
         height: 18rem;
@@ -71,7 +72,6 @@
         gap: 2rem;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
         width: 100%;
         max-width: 650px;
 
@@ -86,7 +86,7 @@
         }
 
         span {
-          background: transparent;
+          background: var(--card_bg_header_bgColor);
           padding: 0.5rem 2rem;
           font-size: 1rem;
           box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);

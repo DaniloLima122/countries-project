@@ -36,24 +36,30 @@ describe('HomeComponent', () => {
 
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      declarations: [HomeComponent, InputSearchComponent, DropdownComponent, CountryCardComponent],
+    await TestBed.configureTestingModule({
+      declarations: [HomeComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         provideMockStore(storeState)
       ]
     }).compileComponents()
+    .then(() => {
+      store = TestBed.inject(MockStore);
+    })
+    .catch(() => {})
 
   });
 
   beforeEach(() => {
-    store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+
+
+    expect(component.countries$).toBeDefined()
     expect(component).toBeTruthy();
   });
 });

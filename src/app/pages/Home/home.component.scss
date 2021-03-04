@@ -1,6 +1,6 @@
 section {
   width: 100%;
-  margin-top: 4rem;
+  padding-top: 10rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,23 +12,24 @@ section {
 
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-    gap: 7rem;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 4rem;
     flex: 1;
     justify-content:center;
 
     country-card{
-      transition: opacity .5s ease;;
+      transition: .5s ease;;
     }
 
     country-card:hover {
 
-        opacity: 0.7;
+      filter: var(--hover-effect);
+
     }
   }
 
   img {
-    filter: brightness(0.98) grayscale(1) opacity(0.3);
+    filter: var(--loading-style);
     transform: translateX(1rem);
   }
 
@@ -37,7 +38,7 @@ section {
     width: 100%;
     text-align: center;
     font-weight: 600;
-    color: #aaa;
+    color: var(--loading-text);
   }
 
   .error {
@@ -51,7 +52,7 @@ section {
     }
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
       transform: translateX(-1rem);
     }
   }
@@ -71,7 +72,7 @@ section {
   }
 
   header {
-    width: 90%;
+
     display: flex;
     justify-content: space-between;
     gap: 2rem;
@@ -83,9 +84,14 @@ section {
   }
 
   main {
-    width: 90%;
     padding: 5rem 0;
     display: grid;
     min-height: 70vh;
+  }
+
+  header,main{
+
+    width: 85%;
+    max-width: 1440px;
   }
 }

@@ -12,6 +12,8 @@ describe('CountryCardComponent', () => {
       declarations: [ CountryCardComponent ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents()
+    .then()
+    .catch(() => {})
 
     fixture = TestBed.createComponent(CountryCardComponent);
     component = fixture.componentInstance;

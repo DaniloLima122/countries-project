@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './services/theme/theme.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  list = [1,2,3,4,5,6,7,8,9]
+  constructor(private themeService: ThemeService){}
 
-  title = 'countries-project';
+  getTheme() : Observable<string>{
+    return this.themeService.getTheme();
+  }
+
 }

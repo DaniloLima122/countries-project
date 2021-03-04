@@ -6,7 +6,13 @@
   display: flex;
   align-items: center;
   box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
-  background: variables.$white;
+  background: var(--card_bg_header_bgColor);
+
+  h1{
+    @media (max-width: 526px) {
+      font-size: 1.5em;
+    }
+  }
 
   & > div {
     width: 85%;
@@ -19,9 +25,15 @@
     & > .themebuttonContainer {
       font-size: 1.3rem;
       font-weight: 600;
-      color: variables.$very-dar-blue-lt;
+      color: var(--text-color);
+      *{
+      cursor: pointer
+    }
       span {
         margin-left: 1rem;
+        @media (max-width: 526px) {
+          display: none;
+        }
       }
     }
   }

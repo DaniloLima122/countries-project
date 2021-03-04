@@ -25,6 +25,7 @@
     </div>
 
     <div
+      [@listCountriesAnimation]="countryListSize"
       class="cards-container"
       *ngIf="!(loading$ | async) && !(error$ | async)"
     >
