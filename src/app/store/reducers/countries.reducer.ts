@@ -8,7 +8,7 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
   switch (action.type) {
     case CountryActionsTypes.LIST_COUNTRIES:
 
-      return { ...state, loading: true }
+      return { ...state, loading: true, error: undefined }
 
     case CountryActionsTypes.LIST_COUNTRIES_SUCCESS:
 
@@ -16,7 +16,7 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.SEARCH_COUNTRIES:
 
-      return { ...state, payload: action.payload , loading: true }
+      return { ...state, payload: action.payload , loading: true , error: undefined }
 
     case CountryActionsTypes.SEARCH_COUNTRIES_SUCCESS:
 
@@ -24,7 +24,7 @@ export function CountriesReducer(state: CountriesState, action: ActionsModel) {
 
     case CountryActionsTypes.FILTER_COUNTRIES:
 
-      return { ...state, payload: action.payload, loading: true }
+      return { ...state, payload: action.payload, loading: true, error: undefined }
 
     case CountryActionsTypes.FILTER_COUNTRIES_SUCCESS:
 

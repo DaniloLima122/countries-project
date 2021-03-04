@@ -3,8 +3,8 @@ import { FormControl } from '@angular/forms';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { debounceTime, filter, map } from 'rxjs/operators';
-import { SearchCountries, LoadCountries } from 'src/app/store/actions/countries.actions';
+import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
+import { LoadCountries, SearchCountries } from 'src/app/store/actions/countries.actions';
 import { AppState } from 'src/app/store/models/app-state.model';
 
 @Component({
@@ -27,8 +27,11 @@ export class InputSearchComponent implements OnInit, OnDestroy {
     this.eventSubscription = this.formControl.valueChanges
         .pipe(
           map((value : string) => value),
-          debounceTime(500))
+          debounceTime(500),
+          distinctUntilChanged()
+          )
           .subscribe(value =>{
+
             value.length > 0  ?  this.searchCountries(value) : this.listAllCountries()
         }, (error) => console.log(error))
   }

@@ -1,5 +1,5 @@
 <div class="country-container">
-  <button (click)="returnHome()"><fa-icon [icon]="arrowLeftIcon"></fa-icon> Back</button>
+  <button [routerLink]="['/home']"><fa-icon [icon]="arrowLeftIcon"></fa-icon> Back</button>
 
   <section class="country-wrapper">
     <img [src]="countryData.flag" [alt]="countryData.name" />

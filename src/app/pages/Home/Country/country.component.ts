@@ -14,14 +14,10 @@ export class CountryComponent implements OnInit {
   countryData !: CompleteCountryData;
   arrowLeftIcon = faArrowLeft;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.route.data.pipe(map(({ country }) => this.countryData = country), take(1)).subscribe();
-  }
-
-  returnHome() {
-    this.router.navigate(['home'])
   }
 }

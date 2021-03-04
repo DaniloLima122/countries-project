@@ -2,18 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CountryCardComponent } from 'src/app/components/country-card/country-card.component';
 import { DropdownComponent } from 'src/app/components/dropdown/dropdown.component';
 import { InputSearchComponent } from 'src/app/components/input-search/input-search.component';
-import { CountryComponent } from './Country/country.component';
 import { HomeComponent } from './home.component';
-import { CountryResolver } from './Country/country.resolver';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CountryModule } from './Country/country.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CountryComponent,
     CountryCardComponent,
     InputSearchComponent,
     DropdownComponent,
@@ -23,9 +21,8 @@ import { CountryResolver } from './Country/country.resolver';
     RouterModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    CountryModule
   ],
-  providers: [
-    CountryResolver
-  ]
+
 })
 export class HomeModule { }
