@@ -1,9 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { CountryCardComponent } from 'src/app/components/country-card/country-card.component';
-import { DropdownComponent } from 'src/app/components/dropdown/dropdown.component';
-import { InputSearchComponent } from 'src/app/components/input-search/input-search.component';
 import { HomeComponent } from './home.component';
 
 
@@ -35,18 +33,16 @@ describe('HomeComponent', () => {
   let store: MockStore
 
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+   TestBed.configureTestingModule({
       declarations: [HomeComponent],
+      imports: [ BrowserAnimationsModule],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         provideMockStore(storeState)
       ]
-    }).compileComponents()
-    .then(() => {
-      store = TestBed.inject(MockStore);
     })
-    .catch(() => {})
+    store = TestBed.inject(MockStore);
 
   });
 
@@ -54,7 +50,9 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+
+  })
+
 
   it('should create', () => {
 

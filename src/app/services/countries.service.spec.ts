@@ -1,8 +1,8 @@
-import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { CompleteCountryData } from '../store/models/country-item.model';
 import { CountriesService } from './countries.service';
-import { CountryCardData, CompleteCountryData } from '../store/models/country-item.model';
+
 
 const countriesList: CompleteCountryData[] = [{
 
@@ -40,23 +40,6 @@ const countriesList: CompleteCountryData[] = [{
   borders: ['AC']
 },
 ]
-
-// const countriesList: CountryCardData[] = [{
-//   flag: 'flag',
-//   name: 'Brazil',
-//   population: 20000,
-//   region: 'Americas',
-//   capital: 'Brasília'
-// },
-// {
-
-//   flag: 'flag',
-//   name: 'France',
-//   population: 150000,
-//   region: 'Europe',
-//   capital: 'Paris'
-// },
-// ]
 
 describe('CountriesService', () => {
   let service: CountriesService;

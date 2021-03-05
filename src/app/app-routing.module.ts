@@ -4,7 +4,7 @@ import { CountryComponent } from './pages/Home/Country/country.component';
 import { HomeComponent } from './pages/Home/home.component';
 import { CountryResolver } from './pages/Home/Country/country.resolver';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',

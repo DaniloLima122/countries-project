@@ -4,6 +4,7 @@ import { DropdownComponent } from './dropdown.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const storeState: any = {
@@ -33,21 +34,20 @@ describe('DropdownComponent', () => {
   let fixture: ComponentFixture<DropdownComponent>;
   let store: MockStore;
 
-  beforeEach(async() => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [ DropdownComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [FontAwesomeModule],
+      imports: [FontAwesomeModule, BrowserAnimationsModule],
       providers: [
         provideMockStore(storeState)
       ]
     })
-    .compileComponents()
-    .then(() => {
-
-      store = TestBed.inject(MockStore);
-    })
-    .catch((e) => console.log(e))
+    // .compileComponents()
+    // .then(() => {
+    // })
+    // .catch((e) => console.log(e))
+    store = TestBed.inject(MockStore);
   });
 
   beforeEach(() => {

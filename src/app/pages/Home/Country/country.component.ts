@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { take, map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { CompleteCountryData } from 'src/app/store/models/country-item.model';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-country',
@@ -18,6 +17,6 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.data.pipe(map(({ country }) => this.countryData = country), take(1)).subscribe();
+    this.countryData = this.route.snapshot.data.country
   }
 }

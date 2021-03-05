@@ -9,6 +9,7 @@ import { CountryResolver } from './country.resolver';
   declarations: [
     CountryComponent,
   ],
+  exports: [CountryComponent],
   imports: [
     CommonModule,
     RouterModule,

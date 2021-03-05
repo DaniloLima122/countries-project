@@ -1,26 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { InputSearchComponent } from './input-search.component';
-import { of } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/models/app-state.model';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { AppState } from 'src/app/store/models/app-state.model';
+import { InputSearchComponent } from './input-search.component';
 
 describe('InputSearchComponent', () => {
   let component: InputSearchComponent;
   let fixture: ComponentFixture<InputSearchComponent>;
   let store: Store<AppState>
 
-  beforeEach( () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InputSearchComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         provideMockStore()
       ]
-    }).compileComponents();
+    })
 
     store = TestBed.inject(MockStore);
 

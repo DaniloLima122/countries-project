@@ -1,4 +1,4 @@
-<figure class="card" [title]="country.name">
+<figure class="card" [title]="country.name" *ngIf="country">
   <img src="{{ country.flag }}" alt="" loading="lazy"/>
 
   <figcaption>
