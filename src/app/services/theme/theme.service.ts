@@ -1,20 +1,20 @@
-import { BehaviorSubject, of, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export class ThemeService {
 
-  private curentTheme = new BehaviorSubject<string>('light');
+  private localStorageTheme = localStorage.getItem('theme') || 'light';
+
+  currentTheme = new BehaviorSubject<string>(this.localStorageTheme);
 
   changeTheme() {
-    this.curentTheme.next(this.curentTheme.value == 'light' ? 'dark' : 'light');
-    this.setThemeOnLocalStorage()
-  }
 
-  getTheme() : Observable<string>{
-    return of(localStorage.getItem('theme') || 'light')
+    this.currentTheme.next(this.currentTheme.value == 'light' ? 'dark' : 'light');
+
+    this.setThemeOnLocalStorage();
   }
 
   private setThemeOnLocalStorage() {
-    localStorage.setItem('theme', this.curentTheme.value);
+    localStorage.setItem('theme', this.currentTheme.value);
   }
 
 }

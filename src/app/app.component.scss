@@ -19,6 +19,10 @@
   --hover-effect: brightness(105%);
 }
 
+*{
+  // transition: background .1s ease, color .1s ease;
+}
+
 .app-container {
   display: block;
   background: var(--body-bg-color);

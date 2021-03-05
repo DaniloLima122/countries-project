@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {faMoon} from '@fortawesome/free-regular-svg-icons';
-import {faMoon as solidMoon} from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faMoon as solidMoon } from '@fortawesome/free-solid-svg-icons';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -14,17 +13,23 @@ export class HeaderComponent implements OnInit {
   moonIcon = faMoon;
   moonIconSolid = solidMoon;
 
+  actualTheme = 'light'
+
   constructor(private themeService: ThemeService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
+    this.actualTheme = this.getCurrentTheme()
   }
 
-  changeTheme() :  void{
-    this.themeService.changeTheme()
+  changeTheme() {
+
+    this.themeService.changeTheme();
+    this.actualTheme = this.getCurrentTheme()
   }
 
-  getCurrentTheme() : Observable<string>{
-    return this.themeService.getTheme()
+  getCurrentTheme() : string{
+
+    return this.themeService.currentTheme.value
   }
 
 }

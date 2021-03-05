@@ -59,6 +59,10 @@ describe('CountryComponent', () => {
   });
 
   it('should create', () => {
+    const countryData = component.countryData;
+
+    expect(countryData).toEqual(mockedResolverData);
+
     expect(component).toBeTruthy();
   });
 });

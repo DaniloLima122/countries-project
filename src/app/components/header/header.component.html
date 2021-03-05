@@ -1,10 +1,10 @@
 <header class="header">
   <div>
     <h1>Where is the World?</h1>
-    <div ngClass="themebuttonContainer" (click)="changeTheme()" [ngSwitch]="(getCurrentTheme()|async)">
+    <div class="themebuttonContainer" (click)="changeTheme()" [ngSwitch]="actualTheme">
       <fa-icon *ngSwitchCase="'light'" [icon]="moonIcon"></fa-icon>
       <fa-icon *ngSwitchCase="'dark'" [icon]="moonIconSolid"></fa-icon>
-      <span>{{(getCurrentTheme()|async) == 'light' ? "Dark Mode" : "Light Mode"   }} </span>
+      <span>{{actualTheme  == 'light' ? "Dark Mode" : "Light Mode"  }} </span>
     </div>
   </div>
 </header>

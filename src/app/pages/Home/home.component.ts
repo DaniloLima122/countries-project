@@ -20,7 +20,7 @@ import { map } from 'rxjs/operators';
           [
             style({ opacity: 0, transform: 'translateY(15px)' }),
             stagger(
-              '.05s',
+              '.02s',
               animate(
                 '.5s ease-out',
                 style({ opacity: 1, transform: 'translateY(0px)' })

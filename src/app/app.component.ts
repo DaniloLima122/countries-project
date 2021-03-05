@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme/theme.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  theme =  'light';
 
   constructor(private themeService: ThemeService){}
 
-  getTheme() : Observable<string>{
-    return this.themeService.getTheme();
+  ngOnInit(){
+
+    this.themeService.currentTheme.subscribe(theme => this.theme = theme)
+
   }
+
 
 }

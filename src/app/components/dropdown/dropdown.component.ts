@@ -57,7 +57,6 @@ export class DropdownComponent implements OnInit {
 
   filterByRegion(region: string) {
 
-
     const continent = this.continents[region];
 
     this.selected_continent = region

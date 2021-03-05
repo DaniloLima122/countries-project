@@ -10,5 +10,4 @@ export interface CountriesState{
 
 export interface AppState{
   readonly countries: CountriesState;
-  readonly theme : string;
 }
