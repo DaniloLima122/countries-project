@@ -1,12 +1,11 @@
-import { NO_ERRORS_SCHEMA, ElementRef } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { HomeComponent } from './home.component';
+import { } from 'rxjs/operators';
+import { LoadCountries } from 'src/app/store/actions/countries.actions';
 import { AppState, CountriesState } from 'src/app/store/models/app-state.model';
-import { By } from '@angular/platform-browser';
-import{} from 'rxjs/operators'
-import { LoadCountries, LoadCountriesSuccess } from 'src/app/store/actions/countries.actions';
+import { HomeComponent } from './home.component';
 
 
 const storeState: CountriesState = {

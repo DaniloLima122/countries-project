@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "jest --watchAll",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test:coverage": "jest --coverage",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@ngrx/effects": "^11.0.1",
     "@ngrx/store": "^11.0.1",
+    "jest-coverage-badges": "^1.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -45,6 +48,11 @@
     "typescript": "~4.0.2"
   },
   "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
       "<rootDir>/setupJest.ts"

@@ -5,13 +5,6 @@ import { NO_ERRORS_SCHEMA, ElementRef } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 import { By } from '@angular/platform-browser';
 
-// const mockedThemeService = {
-
-//   actualtheme: 'light',
-//   changeTheme: jest.fn().mockReturnValue('light')
-
-// }
-
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;

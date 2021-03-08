@@ -1,4 +1,33 @@
-# CountriesProject
+<h1 align="center">Front end Mentor Countries App challenge</h1>
+
+<div align="center">
+
+<img src="./badges/badge-lines.svg"/>
+
+<img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=43bd16&labelColor=535353" />
+
+<img alt="stars" src="https://img.shields.io/github/stars/DaniloLima122/countries-project?color=43bd16">
+
+</div>
+
+<br/>
+<br/>
+
+<img src="src/assets/countries.JPG">
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+# Technolgies
+- Angular
+- RxJS
+- NgRx
+- SASS
+- JEST
+
+<br/>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
