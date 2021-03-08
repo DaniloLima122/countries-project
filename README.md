@@ -25,7 +25,7 @@ This project is a challenge from [Front-end Mentor](https://www.frontendmentor.i
 
 <br/>
 
-# Technolgies
+# Technologies
 - Angular
 - RxJS
 - NgRx
@@ -33,6 +33,8 @@ This project is a challenge from [Front-end Mentor](https://www.frontendmentor.i
 - JEST
 
 <br/>
+
+# Running project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
