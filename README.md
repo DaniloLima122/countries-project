@@ -1,4 +1,4 @@
-<h1 align="center">Front end Mentor Countries App challenge</h1>
+<h1 align="center">Countries Searching</h1>
 
 <div align="center">
 
@@ -10,12 +10,19 @@
 
 </div>
 
+
 <br/>
 <br/>
 
 <img src="src/assets/countries.JPG">
 
 <br/>
+<br/>
+
+# Project
+ 
+This project is a challenge from [Front-end Mentor](https://www.frontendmentor.io/) website, its a searching country app that consumes [REST Country](https://restcountries.eu/) API
+
 <br/>
 
 # Technolgies
