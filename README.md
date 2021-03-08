@@ -17,8 +17,6 @@
 
 <br/>
 <br/>
-<br/>
-<br/>
 
 # Technolgies
 - Angular
