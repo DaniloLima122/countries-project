@@ -15,6 +15,7 @@ export enum CountryActionsTypes {
 
 export class LoadCountries implements Action {
   readonly type = CountryActionsTypes.LIST_COUNTRIES;
+
 }
 
 export class LoadCountriesSuccess implements Action {

@@ -51,6 +51,12 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     this.loading$ = this.store.select(store => store.countries.loading);
     this.error$ = this.store.select(store => store.countries?.error);
 
+    this.LoadCountries();
+  }
+
+
+  LoadCountries(){
+
     this.store.dispatch(new LoadCountries())
   }
 

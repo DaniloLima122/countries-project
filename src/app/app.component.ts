@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme/theme.service';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',

@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { AppState, CountriesState } from 'src/app/store/models/app-state.model';
 import { By } from '@angular/platform-browser';
 import{} from 'rxjs/operators'
+import { LoadCountries, LoadCountriesSuccess } from 'src/app/store/actions/countries.actions';
 
 
 const storeState: CountriesState = {
@@ -63,9 +64,27 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
 
+
+    const spyLoadCountries = jest.spyOn(component, 'LoadCountries');
+
+    component.ngOnInit();
+
+    expect(spyLoadCountries).toBeCalledTimes(1);
     expect(component.countries$).toBeDefined()
 
     expect(component).toBeTruthy();
   });
+
+  test('should Load countries dispatch actin Load Countries', () => {
+
+    const spyDispatch = jest.spyOn(store, 'dispatch');
+
+    const expectedAction = new LoadCountries();
+
+    component.LoadCountries();
+
+    expect(spyDispatch).toBeCalledTimes(1);
+    expect(spyDispatch).toBeCalledWith(expectedAction);
+  })
 
 });
