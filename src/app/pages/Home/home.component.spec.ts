@@ -64,13 +64,12 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
 
-
     const spyLoadCountries = jest.spyOn(component, 'LoadCountries');
 
     component.ngOnInit();
 
     expect(spyLoadCountries).toBeCalledTimes(1);
-    expect(component.countries$).toBeDefined()
+    expect(component.countries$).toBeDefined();
 
     expect(component).toBeTruthy();
   });
@@ -86,5 +85,4 @@ describe('HomeComponent', () => {
     expect(spyDispatch).toBeCalledTimes(1);
     expect(spyDispatch).toBeCalledWith(expectedAction);
   })
-
 });
