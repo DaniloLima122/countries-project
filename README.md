@@ -28,7 +28,6 @@ This project is a challenge from [Front-end Mentor](https://www.frontendmentor.i
 - SASS
 - JEST
 
-<br/>
 
 # Running project
 
