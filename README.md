@@ -16,8 +16,6 @@
 
 <img src="src/assets/countries.JPG">
 
-<br/>
-<br/>
 
 # Project
  
