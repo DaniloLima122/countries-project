@@ -21,8 +21,6 @@
  
 This project is a challenge from [Front-end Mentor](https://www.frontendmentor.io/) website, its a searching country app that consumes [REST Country](https://restcountries.eu/) API
 
-<br/>
-
 # Technologies
 - Angular
 - RxJS
